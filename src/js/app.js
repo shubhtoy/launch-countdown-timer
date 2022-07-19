@@ -138,9 +138,34 @@ function updateCountDownDisplay (incrementalTime) {
   secFlipCard.update    = getSecondsFromIncrementalTime (incrementalTime);
 }
 
+function get_time_diff( datetime )
+{
+    var datetime = typeof datetime !== 'undefined' ? datetime : "2022-08-14 00:00:00";
+
+    var datetime = new Date( datetime ).getTime();
+    var now = new Date().getTime();
+
+    if( isNaN(datetime) )
+    {
+        return "";
+    }
+
+    console.log( datetime + " " + now);
+
+    if (datetime < now) {
+        var milisec_diff = now - datetime;
+    }else{
+        var milisec_diff = datetime - now;
+    }
+
+    var final = Math.floor(milisec_diff / 1000 );
+    return final
+}
+
+
 // count variable is increment very 1 second
 // this value is then converted into sec/min/hours/days
-let incrementalTime = (86400 * 8);
+let incrementalTime = get_time_diff();
 
 /**
  * counter_1 and counter_2 functions both call each other
