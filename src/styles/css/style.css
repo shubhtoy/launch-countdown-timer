@@ -71,7 +71,7 @@ body .footer__social-icons {
   justify-content: space-between;
   align-items: center;
   margin: 30px;
-  width: 130px;
+  width: 80px;
 }
 body .footer__social-icons svg path {
   transition: all 1s ease-in-out;
